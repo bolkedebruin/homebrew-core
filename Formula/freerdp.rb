@@ -33,6 +33,7 @@ class Freerdp < Formula
   depends_on "libxrender"
   depends_on "libxv"
   depends_on "openssl@1.1"
+  depends_on "cairo"
 
   uses_from_macos "cups"
 
@@ -49,6 +50,7 @@ class Freerdp < Formula
                     "-DWITH_X11=ON",
                     "-DBUILD_SHARED_LIBS=ON",
                     "-DWITH_JPEG=ON",
+                    "-DWITH_CAIRO=ON",
                     "-DCMAKE_INSTALL_NAME_DIR=#{lib}"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
